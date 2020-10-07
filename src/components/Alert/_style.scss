@@ -1,0 +1,85 @@
+.alert {
+    position: fixed;
+    z-index: 99;
+    width: 400px;
+    height: 100px;
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, .12), 0 6px 16px 0 rgba(0, 0, 0, .08), 0 9px 28px 8px rgba(0, 0, 0, .05);
+    border-radius: $border-radius;
+    transition-duration: .2s;
+    padding: 10px;
+    color: #fff;
+
+    .alert-message {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-normal;
+        display: flex;
+        justify-content: space-between;
+
+        .alert-close {
+            cursor: pointer;
+            font-size: 26px;
+        }
+    }
+}
+
+// alert方位
+.alert-left {
+    top: 50%;
+    margin-top: -50px;
+    left: 10px;
+}
+
+.alert-top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.alert-top {
+    top: 10px;
+    left: 50%;
+    margin-left: -200px;
+}
+
+.alert-top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.alert-right {
+    top: 50%;
+    margin-top: -50px;
+    right: 10px;
+}
+
+.alert-bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.alert-bottom {
+    bottom: 10px;
+    left: 50%;
+    margin-left: -200px;
+}
+
+.alert-bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+// alert样式
+.alert-default {
+    background-color: $primary;
+}
+
+.alert-success {
+    background-color: $success;
+}
+
+.alert-danger {
+    background-color: $danger;
+}
+
+.alert-warning {
+    background-color: $warning;
+}

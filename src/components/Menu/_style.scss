@@ -1,0 +1,131 @@
+$activeColor: #9933CC;
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    // 子菜单项
+    .menu-item {
+        list-style: none;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        position: relative;
+        padding: 5px 10px;
+        color: #000;
+        margin: 0 20px;
+
+        &:hover,
+        &:focus {
+            color: $activeColor;
+        }
+    }
+
+    // 下拉菜单项
+    .youchen-submenu {
+        .submenu-main {
+            margin: 0px;
+            width: 100%;
+            padding: 0px;
+            position: absolute;
+            box-shadow: 0 2px 6px rgba(100, 100, 100, .3);
+            top: 45px;
+            left: 0px;
+            background-color: #fff;
+            z-index: 99;
+
+            .menu-item {
+                font-size: 14px;
+                font-weight: 600;
+                margin: 0px;
+                padding: 8px 10px;
+            }
+        }
+
+        .arrow-icon {
+            transition-duration: .2s;
+            margin-left: 5px;
+        }
+
+        &:hover {
+            .arrow-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .menu-item-active {
+        color: $activeColor;
+        border-bottom: 4px $activeColor solid;
+    }
+
+    .menu-item-disabled {
+        color: $gray-500;
+        cursor: not-allowed;
+
+        &:hover {
+            color: $gray-500;
+        }
+    }
+}
+
+.menu-horizontal {
+    border-bottom: 1px solid #eee;
+
+    .youchen-submenu {
+        .submenu-main {
+            .menu-item {
+                text-align: center;
+            }
+        }
+
+        .arrow-icon {
+            display: inline-block;
+        }
+    }
+}
+
+.menu-vertical {
+    flex-direction: column;
+
+    .menu-item {
+        padding-left: 10px;
+        border-left: 4px transparent solid;
+        border-bottom: none;
+
+        .submenu-main {
+            margin: 0px;
+            padding: 0px;
+            position: static;
+            box-shadow: none;
+            top: auto;
+
+            .menu-item {
+                margin: 0px;
+                padding-left: 10px;
+            }
+        }
+
+        .arrow-icon {
+            transform: rotate(0deg);
+        }
+
+        &:hover {
+            .arrow-icon {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    .menu-item-active {
+        color: $activeColor;
+        border-left: 4px $activeColor solid;
+        padding-left: 10px;
+    }
+
+    .submenu-is-opened {
+        .arrow-icon {
+            transform: rotate(180deg) !important;
+        }
+    }
+}
