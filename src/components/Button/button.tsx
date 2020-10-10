@@ -1,12 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
 
-type ButtonSize = 'lg' | 'sm'
+export type ButtonSize = 'lg' | 'sm' | 'normal'
 
-type ButtonType = 'primary' | 'default' | 'danger' | 'link'
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 
 interface BaseButtonProps {
-    classNmae?: string
+    className?: string
     disabled?: boolean
     size?: ButtonSize
     btnType?: ButtonType
@@ -49,7 +49,8 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
     disabled: false,
-    btnType: 'default'
+    btnType: 'default',
+    size: 'normal'
 }
 
 export default Button

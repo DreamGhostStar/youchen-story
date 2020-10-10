@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames';
-import IconFont from '../IconFont';
 import Transition from '../Transition/transition';
+import Icon from '../Icon/icon';
 
 export type AlertType = 'success' | 'default' | 'danger' | 'warning'
 export type AlertPlace = 'top-left' | 'top' | 'top-right' | 'right' | 'bottom-right' | 'bottom' | 'bottom-left' | 'left'
@@ -35,7 +35,7 @@ const Alert: React.FC<AlertProps> = (props) => {
             >
                 <div className='alert-message' >
                     <p>{message}</p>
-                    <IconFont type='iconguanbi1' className='alert-close' onClick={onCancel} />
+                    <Icon icon='times' className='alert-close' onClick={onCancel} />
                 </div>
                 {
                     decoration && <p>{decoration}</p>

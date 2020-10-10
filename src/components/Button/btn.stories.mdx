@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Button from './button'
+
+<Meta title="通用/按钮/文档" />
+
+## 文档
+
+<div style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%'
+}}>
+    <Button btnType='default' size='sm' >Default small</Button>
+    <Button btnType='primary' >Primary normal</Button>
+    <Button btnType='danger' size='lg' >Danger large</Button>
+    <Button btnType='link' href='http://www.baidu.com'>Link</Button>
+</div>
+
+```
+<div style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%'
+}}>
+    <Button btnType='default' size='sm' >Default small</Button>
+    <Button btnType='primary' >Primary normal</Button>
+    <Button btnType='danger' size='lg' >Danger large</Button>
+    <Button btnType='link' href='http://www.baidu.com'>Link</Button>
+</div>
+```
+
+属性|说明|类型|默认值
+-|-|-|-
+btnType|按钮类型| `default` &#124; `primary` &#124; `danger`&#124; `link` | `default`
+size|按钮大小|`lg` &#124; `sm` &#124; `normal` | `normal`
+disabled|是否禁用|`boolean` | false
+href|链接（只有当按钮类型为`link`时才有作用）|`string` | -
