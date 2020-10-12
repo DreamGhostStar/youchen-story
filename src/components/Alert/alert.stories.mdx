@@ -1,0 +1,15 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Alert from './alert'
+
+<Meta title="通用/提示消息/文档" />
+
+## 文档
+
+属性|说明|类型|默认值
+-|-|-|-
+visible|控制显示| `boolean` | `false`
+message|提示的标题|`string`| `-`
+decoration|提示的描述|`string` | `-`
+type|提示的类型|`default` &#124; `success` &#124; `danger`&#124; `warning` | `default`
+onCancel|点击关闭icon时的回调|`() => void` | `-`
+placement|提示所出现的位置|`top-left` &#124; `top` &#124; `top-right` &#124; `right` &#124; `bottom-right` &#124; `bottom` &#124; `bottom-left` &#124; `left`| `top`

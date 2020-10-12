@@ -1,0 +1,77 @@
+.youchen-input-layout {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    width: max-content;
+    border-radius: 3px;
+
+    .youchen-input-prefix-icon-layout {
+        border: 1px solid #ccc;
+        border-right: none;
+        padding: 5px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .youchen-input-prefix-icon-layout + .youchen-input {
+        border-left: none;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .youchen-input-prefix-label-layout {
+        border: 1px solid #ccc;
+        border-right: none;
+        padding: 5px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        background-color: #eee;
+    }
+
+    .youchen-input-prefix-label-layout + .youchen-input {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .youchen-input {
+        border: 1px solid #ccc;
+        outline: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        font-size: 14px;
+    
+        &:hover {
+            border-color: #40a9ff;
+        }
+    }
+
+    .input-large {
+        padding: 10px 20px;
+    }
+
+    .input-small {
+        padding: 0px 10px;
+    }
+
+    .input-disabled {
+        cursor: not-allowed;
+        background-color: #eee;
+    }
+
+    .youchen-input-suffix-icon-layout {
+        border: 1px solid #ccc;
+        border-left: none;
+        padding: 5px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .youchen-input-suffix-label-layout {
+        border: 1px solid #ccc;
+        border-left: none;
+        padding: 5px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color: #eee;
+    }
+}

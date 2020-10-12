@@ -25,6 +25,7 @@ const Alert: React.FC<AlertProps> = (props) => {
             animation='zoom-in-top'
             in={visible}
             timeout={600}
+            warpper={true}
         >
             <div
                 className={classes}

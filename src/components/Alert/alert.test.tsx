@@ -1,21 +1,21 @@
 import React from 'react'
-import Alert, { AlertProps, AlertType, AlertPlace } from './alert'
+import Alert, { AlertProps } from './alert'
 import { render, fireEvent } from '@testing-library/react'
 
 const defaultProps: AlertProps = {
     message: 'default',
     decoration: 'decoration',
-    type: AlertType.Default,
+    type: 'default',
     visible: true,
-    placement: AlertPlace.Top
+    placement: 'top'
 }
 
 const successProps: AlertProps = {
     message: 'success',
     decoration: 'decoration',
-    type: AlertType.Success,
+    type: 'success',
     visible: true,
-    placement: AlertPlace.Top,
+    placement: 'top',
     onCancel: jest.fn()
 }
 
