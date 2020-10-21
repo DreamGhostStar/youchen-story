@@ -1,4 +1,4 @@
-import React, { ReactElement, InputHTMLAttributes, useEffect, useState } from 'react'
+import React, { ReactElement, InputHTMLAttributes, useEffect, useState, MouseEvent, FocusEvent } from 'react'
 import classNames from 'classnames'
 
 type InputSize = 'large' | 'normal' | 'small'
@@ -14,7 +14,23 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
 }
 
 const Input: React.FC<InputProps> = (props) => {
-    const { disabled, size, prefixIcon, suffixIcon, prefixLabel, suffixLabel, className, isPassword, style, placeholder, ...restProp } = props
+    const {
+        disabled,
+        size,
+        prefixIcon,
+        suffixIcon,
+        prefixLabel,
+        suffixLabel,
+        className,
+        isPassword,
+        style,
+        placeholder,
+        onFocus,
+        onBlur,
+        onMouseOver,
+        onMouseOut,
+        ...restProp
+    } = props
     const classes = classNames('youchen-input', {
         'input-disabled': disabled,
         [`input-${size}`]: size,
@@ -30,6 +46,30 @@ const Input: React.FC<InputProps> = (props) => {
             console.error('prefixIcon can not coexist with prefixLabel')
         }
     }, [])
+    const handleMouseOver = (e: MouseEvent<HTMLInputElement, globalThis.MouseEvent>) => {
+        setIsMouse(true)
+        if (onMouseOver) {
+            onMouseOver(e)
+        }
+    }
+    const handleMouseOut = (e: MouseEvent<HTMLInputElement, globalThis.MouseEvent>) => {
+        setIsMouse(false)
+        if (onMouseOut) {
+            onMouseOut(e)
+        }
+    }
+    const handleFocus = (e: FocusEvent<HTMLInputElement>) => {
+        setIsFocus(true)
+        if (onFocus) {
+            onFocus(e)
+        }
+    }
+    const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
+        setIsFocus(false)
+        if (onBlur) {
+            onBlur(e)
+        }
+    }
 
     return (
         <div
@@ -62,10 +102,10 @@ const Input: React.FC<InputProps> = (props) => {
                     ...restProp
                 }}
                 placeholder={placeholder === null ? 'placeholder' : placeholder}
-                onMouseOver={() => setIsMouse(true)}
-                onMouseOut={() => setIsMouse(false)}
-                onFocus={() => setIsFocus(true)}
-                onBlur={() => setIsFocus(false)}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
                 {...restProp}
             />
             {

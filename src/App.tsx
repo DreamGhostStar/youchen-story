@@ -5,6 +5,7 @@ import Button from './components/Button/button';
 import Transition from './components/Transition/transition';
 import Alert from './components/Alert/alert';
 import './App.css'
+import axios from 'axios'
 
 library.add(fas)
 
