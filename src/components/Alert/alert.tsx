@@ -28,6 +28,7 @@ const Alert: React.FC<AlertProps> = (props) => {
             warpper={true}
         >
             <div
+                data-testid='test-alert'
                 className={classes}
                 style={{
                     display: visible ? 'block' : 'none',
@@ -36,7 +37,12 @@ const Alert: React.FC<AlertProps> = (props) => {
             >
                 <div className='alert-message' >
                     <p>{message}</p>
-                    <Icon icon='times' className='alert-close' onClick={onCancel} />
+                    <Icon
+                        data-testid='test-alert-close-icon'
+                        icon='times'
+                        className='alert-close'
+                        onClick={onCancel}
+                    />
                 </div>
                 {
                     decoration && <p>{decoration}</p>

@@ -63,7 +63,6 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
         onMouseLeave: (e: React.MouseEvent) => { handleMouse(e, false) },
     } : {}
     return (
-
         <li key={index} className={classes} style={style} {...mouseEvents} >
             <div className='submenu-title' onClick={handleClick}>
                 {title}

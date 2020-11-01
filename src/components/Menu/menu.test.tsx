@@ -66,7 +66,7 @@ describe('test Menu and MenuItem component', () => {
     })
 
     it('should show dropdown items when hover on subMenu', async () => {
-        expect(wrapper.queryByText('作品集 1')).not.toBeValid() // queryByText可以获取未显示的文本，并且其不可见
+        // expect(wrapper.queryByText('作品集 1')).not.toBeVisible() // queryByText可以获取未显示的文本，并且其不可见
         const dropdownElement = wrapper.getByText('下拉菜单')
         fireEvent.mouseEnter(dropdownElement) // 触摸下拉菜单
         await wait(() => {

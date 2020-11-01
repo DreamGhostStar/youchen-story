@@ -1,0 +1,91 @@
+.youchen-upload {
+    .file-item-layout {
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: #eee;
+        }
+
+        .file-item-info-layout {
+            display: flex;
+            justify-content: flex-start;
+
+            .file-icon {
+                margin-top: 6px;
+                margin-left: 5px;
+            }
+
+            .file-icon-error {
+                color: red;
+            }
+
+            .file-item-name {
+                margin-left: 10px;
+                font-size: 16px;
+            }
+
+            .file-item-name-error {
+                color: red;
+            }
+        }
+
+        .file-item-info-layout-error {
+            color: red;
+        }
+
+        .file-status-icon {
+            margin-top: 6px;
+            margin-right: 5px;
+        }
+
+        .file-close-icon {
+            display: none;
+            margin-top: 6px;
+            margin-right: 7px;
+            cursor: pointer;
+        }
+    }
+
+    .upload-progress-layout {
+        border-radius: 5px;
+        margin-top: 10px;
+        background-color: #eee;
+        width: 200px;
+        height: 20px;
+
+        .upload-progress {
+            border-radius: 5px;
+            background-color: blue;
+            height: 20px;
+            position: relative;
+        }
+
+        .progress-number {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+    }
+}
+
+.example-drag {
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.youchen-dragger {
+    width: max-content;
+    border: 1px dashed #ccc;
+}
+
+.is-dragover {
+    border: 1px dashed blue !important;
+}

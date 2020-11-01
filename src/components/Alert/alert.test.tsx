@@ -23,19 +23,19 @@ const successProps: AlertProps = {
 describe('test Alert components', () => {
     it('should render default Alert', () => {
         const warpper = render(<Alert {...defaultProps} >default</Alert>)
-        const elem = warpper.container as HTMLDivElement
+        const elem = warpper.getByTestId('test-alert')
         expect(elem).toBeInTheDocument()
-        expect(elem.firstChild).toHaveClass('alert alert-default')
+        expect(elem).toHaveClass('alert alert-default')
         expect(elem.tagName).toEqual('DIV')
     })
     it('should render different Alert based on differernt props', () => {
         const warpper = render(<Alert {...successProps} >default</Alert>)
-        const elem = warpper.container as HTMLDivElement
+        const elem = warpper.getByTestId('test-alert')
         expect(elem).toBeInTheDocument()
-        expect(elem.firstChild).toHaveClass('alert alert-success')
+        expect(elem).toHaveClass('alert alert-success')
         expect(elem.tagName).toEqual('DIV')
 
-        const closeIcon = warpper.getByText('关闭') as HTMLParagraphElement
+        const closeIcon = warpper.getByTestId('test-alert-close-icon')
         fireEvent.click(closeIcon)
         expect(successProps.onCancel).toHaveBeenCalled()
     })
