@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Alert, { AlertProps } from './alert';
 
 export default {
-    title: '通用/提示消息',
+    title: '信息展示/提示消息',
     component: Alert,
     argTypes: {
         message: {

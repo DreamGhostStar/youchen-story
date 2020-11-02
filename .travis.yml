@@ -7,11 +7,11 @@ cache:
 env:
   - CI=true
 script:
-  - npm run build-storybook
+  - npm run build-storybook # 在推送到仓库时，直接发布到github page上
 deploy:
-  provider: pages
+  provider: pages # github page
   skip_cleanup: true
-  github_token: $github_token  # Set in the settings page of your repository, as a secure variable
-  local_dir: storybook-static
+  github_token: $github_token  # github.com => settings => tokens
+  local_dir: storybook-static # 部署的文件夹
   on:
-    branch: master
+    branch: master # GitHub page 所要查找的分支为master

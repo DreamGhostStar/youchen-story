@@ -1,13 +1,10 @@
 import '../src/styles/index.scss'
-import { addParameters } from '@storybook/react';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: { expanded: true },
-}
-addParameters({
-  docs: {
-    container: DocsContainer,
-    page: DocsPage,
+  options: {
+    storySort: {
+      order: ['使用前须知', '通用'], // 配置故事展示的顺序
+    },
   },
-});
+}

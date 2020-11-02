@@ -45,3 +45,10 @@ p {
     fill: currentColor;
     overflow: hidden;
 }
+
+.youchen-example {
+    width: 500px;
+    border: 1px solid rgb(240, 240, 240);
+    padding: 8px;
+    background-color: rgba($color: #eee, $alpha: 0.3);
+}
