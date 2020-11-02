@@ -110,7 +110,7 @@ var AutoComplete = function (props) {
             setSuggestions([]);
         }
         setHighlightIndex(-1);
-    }, [debouncedValue]);
+    }, [debouncedValue, fetchSuggestions]);
     return (React.createElement("div", { className: 'youchen-auto-complete', ref: componentRef },
         React.createElement(Input, __assign({ value: inputValue || '', onChange: handleChange, onKeyDown: handleKeyDown, suffixIcon: loading ? React.createElement(Icon, { icon: 'spinner', spin: true }) : undefined }, restProps)),
         React.createElement(Transition, { animation: 'zoom-in-top', timeout: 300, in: suggestions.length > 0 }, generateDropdown())));

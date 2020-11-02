@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import AutoComplete, { AutoCompleteProps, DataSourceType } from './autoComplete';
+import AutoComplete, { AutoCompleteProps } from './autoComplete';
 
 export default {
     title: '输入&输出/输入补全提示',
@@ -31,14 +31,6 @@ const lakersWithNumber: LakerItemProps[] = [
 ]
 const handleFetch = (query: string) => {
     return lakersWithNumber.filter(name => name.value.includes(query))
-}
-const renderOption = (item: DataSourceType<LakerItemProps>) => {
-    return (
-        <>
-            <h2>Name: {item.value}</h2>
-            <p>NUmber: {item.number}</p>
-        </>
-    )
 }
 
 const Template: Story<AutoCompleteProps> = (args) => {

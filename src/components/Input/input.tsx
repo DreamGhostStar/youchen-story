@@ -45,7 +45,7 @@ const Input: React.FC<InputProps> = (props) => {
         if (prefixIcon && prefixLabel) {
             console.error('prefixIcon can not coexist with prefixLabel')
         }
-    }, [])
+    }, [suffixIcon, suffixLabel, prefixIcon, prefixLabel])
     const handleMouseOver = (e: MouseEvent<HTMLInputElement, globalThis.MouseEvent>) => {
         setIsMouse(true)
         if (onMouseOver) {

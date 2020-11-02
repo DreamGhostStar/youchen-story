@@ -56,10 +56,10 @@ const handleBeforeUpload = (file: File) => {
     return true
 }
 // 重命名文件
-const filePromise = (file: File) => {
-    const newFile = new File([file], 'new_name.docx', { type: file.type })
-    return Promise.resolve(newFile)
-}
+// const filePromise = (file: File) => {
+//     const newFile = new File([file], 'new_name.docx', { type: file.type })
+//     return Promise.resolve(newFile)
+// }
 
 export const UploadDefault = BasicTemplate.bind({});
 UploadDefault.storyName = '基本的上传文件'

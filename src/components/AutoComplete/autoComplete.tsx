@@ -108,7 +108,7 @@ const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
             setSuggestions([])
         }
         setHighlightIndex(-1)
-    }, [debouncedValue])
+    }, [debouncedValue, fetchSuggestions])
     return (
         <div className='youchen-auto-complete' ref={componentRef} >
             <Input

@@ -39,7 +39,7 @@ var Input = function (props) {
         if (prefixIcon && prefixLabel) {
             console.error('prefixIcon can not coexist with prefixLabel');
         }
-    }, []);
+    }, [suffixIcon, suffixLabel, prefixIcon, prefixLabel]);
     var handleMouseOver = function (e) {
         setIsMouse(true);
         if (onMouseOver) {

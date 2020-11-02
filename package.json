@@ -24,33 +24,33 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
     "@fortawesome/free-solid-svg-icons": "^5.15.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
     "axios": "^0.20.0",
     "classnames": "^2.2.6",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "react-transition-group": "^4.4.1",
-    "typescript": "~3.7.2"
+    "react-transition-group": "^4.4.1"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "clear": "rimraf ./dist",
+    "clear build-storybook":"rimraf ./src/storybook-static",
+    "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
     "build": "yarn clear && yarn build-ts && yarn build-sass",
     "test": "react-scripts test",
+    "test:nowatch": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-sass": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepublish": "yarn build"
+    "prepublish": "yarn test:nowatch && yarn lint && yarn build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test:nowatch && yarn lint"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -77,10 +77,24 @@
     "@storybook/node-logger": "^6.0.26",
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.26",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "@types/classnames": "^2.2.10",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
     "@types/react-transition-group": "^4.4.0",
     "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "husky": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
-    "rimraf": "^3.0.2"
+    "react-scripts": "3.4.3",
+    "rimraf": "^3.0.2",
+    "typescript": "~3.7.2"
   }
 }
