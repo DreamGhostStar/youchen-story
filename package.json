@@ -1,7 +1,25 @@
 {
   "name": "youchen-story",
   "version": "0.1.0",
-  "private": true,
+  "description": "React组件库",
+  "author": "youchen",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "Component",
+    "UI",
+    "React"
+  ],
+  "homepage": "https://gitee.com/youchen12138/storybook",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/youchen12138/storybook"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
     "@fortawesome/free-solid-svg-icons": "^5.15.0",
@@ -24,11 +42,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clear": "rimraf ./dist",
+    "build": "yarn clear && yarn build-ts && yarn build-sass",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-sass": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepublish": "yarn build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,6 +80,7 @@
     "@types/classnames": "^2.2.10",
     "@types/react-transition-group": "^4.4.0",
     "babel-loader": "^8.1.0",
-    "react-is": "^16.13.1"
+    "react-is": "^16.13.1",
+    "rimraf": "^3.0.2"
   }
 }
