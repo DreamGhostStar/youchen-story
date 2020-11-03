@@ -5,7 +5,7 @@
 #### 安装
 
 ```
-npm install youchen-story --save
+npm install react-component-story --save
 ```
 
 #### 引入css文件
@@ -13,7 +13,7 @@ npm install youchen-story --save
 我们将组件库的样式文件全部打包为一个css文件，在使用之前，请先在合适的地方引入css文件
 
 ```
-import 'youchen-story/dist/index.css'
+import 'react-component-story/dist/index.css'
 ```
 
 #### 组件浏览
