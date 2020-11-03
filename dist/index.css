@@ -774,7 +774,8 @@ main {
 .youchen-divider {
   width: 100%;
   height: 1px;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 10px 20px 10px 0px; }
 
 p {
   margin: 0px; }
@@ -785,3 +786,9 @@ p {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden; }
+
+.youchen-example {
+  width: 500px;
+  border: 1px solid #f0f0f0;
+  padding: 8px;
+  background-color: rgba(238, 238, 238, 0.3); }

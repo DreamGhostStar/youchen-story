@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import TransitionExample from './transition_example'
+
+<Meta title="通用/动画效果/文档" />
+
+## 示例
+
+<TransitionExample />
+
+```js
+const TransitionExample: FC = () => {
+    const [visible, setVisible] = useState(false)
+    return (
+        <div style={{
+            width: 500;
+            border: '1px solid rgb(240, 240, 240)';
+            padding: 8;
+            backgroundColor: 'rgba($color: #eee, $alpha: 0.3)';
+        }} >
+            <Transition
+                animation='zoom-in-top'
+                in={visible}
+                timeout={600}
+                warpper={true}
+            >
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.</p>
+            </Transition>
+            <Button onClick={() => setVisible(!visible)}>点击后切换内容</Button>
+        </div>
+    )
+}
+```
+
+## 属性说明
+
+属性|说明|类型|默认值
+-|-|-|-
+animation|动画类型| `zoom-in-top` &#124; `zoom-in-left` &#124; `zoom-in-bottom`&#124; `zoom-in-right` | `-`
+in|控制children是否存在，也是控制动画开始的开关|`ReactElement` | `-`
+timeout|动画的时间长短|`number` | `0`
