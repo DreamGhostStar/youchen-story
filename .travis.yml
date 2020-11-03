@@ -15,3 +15,11 @@ deploy:
   local_dir: storybook-static # 部署的文件夹
   on:
     branch: master # GitHub page 所要查找的分支为master
+  
+  provider: npm
+  skip_cleanup: true
+  email: "120275191@qq.com"
+  api_key: "YOUR_AUTH_TOKEN" # npm token
+  local_dir: dist # 部署的文件夹
+  on:
+    branch: master # GitHub page 所要查找的分支为master
