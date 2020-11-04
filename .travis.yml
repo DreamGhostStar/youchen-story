@@ -23,4 +23,3 @@ deploy:
   local_dir: dist # 部署的文件夹
   on:
     branch: master # GitHub page 所要查找的分支为master
-    tags: true # 当软件包的新版本被剪切时才部署到npm
